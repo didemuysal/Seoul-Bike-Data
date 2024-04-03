@@ -1,2 +1,2 @@
 # Seoul-Bike-Data
-Analysis on Rented Bikes in Seoul
+Analysis of Rented Bikes in Seoul for the project of Practical Business Analysis Module. 
