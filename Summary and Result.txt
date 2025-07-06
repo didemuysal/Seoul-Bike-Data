@@ -1,15 +1,16 @@
-======================================== Project Summary: Predicting Seoul Bike Sharing Demand
+Project Summary: Predicting Seoul Bike Sharing Demand
+
 This project focuses on accurately predicting the hourly demand for rental bikes in Seoul's bike-sharing system. By leveraging a public dataset, the study aims to provide actionable insights for a bike rental company to optimize resource allocation, enhance user experience, and improve operational efficiency.
 
 METHODOLOGY
 The project followed the Cross-Industry Standard Process for Data Mining (CRISP-DM) framework, ensuring a structured approach from data understanding to deployment.
 
-Data & Preprocessing:
+1. Data & Preprocessing:
 The analysis utilized the "Seoul Bike Sharing Demand" dataset from the UCI Machine Learning Repository. This dataset contains 8,760 hourly observations with 14 features, including temporal information (date, hour) and weather conditions (temperature, humidity, wind speed, etc.).
 
 Initial data exploration (EDA) revealed a right-skewed distribution for the target variable (Rented Bike Count) and strong correlations between certain features, such as Temperature and Dew Point Temperature. The data was cleaned, and new time-based features like "Day of the Week" and "isWeekend" were engineered.
 
-Feature Engineering & Dataset Creation:
+2. Feature Engineering & Dataset Creation:
 To thoroughly test the models, several distinct datasets were created based on different feature engineering strategies:
 
 Encoded Dataset: The baseline dataset with all features, including one-hot encoded categorical variables.
@@ -24,7 +25,7 @@ No Weak Dataset: Excluded features with a low correlation (< 0.1) to the target 
 
 No FD DEW Dataset: A combination of the "No FD" and "No DEW" datasets.
 
-Modeling:
+3. Modeling:
 A diverse range of machine learning algorithms was implemented to predict bike rental demand. Each model was trained and evaluated on all six datasets. The models fall into three main categories:
 
 Linear Models: Lasso, Ridge, and ElasticNet Regression.
@@ -35,7 +36,7 @@ Other Models: K-Nearest Neighbors (KNN) and Support Vector Machine (SVM) Regress
 
 Hyperparameter tuning, including Grid Search and Bayesian Optimization, was performed to optimize the performance of each model.
 
-RESULTS & COMPARISON
+4. RESULTS & COMPARISON
 Model performance was primarily evaluated using the R-squared (R^2) metric, which indicates the proportion of the variance in the dependent variable that is predictable from the independent variable(s). The list below shows the best R^2 score achieved by each model across all datasets.
 
 Model: XGBoost
@@ -70,7 +71,7 @@ Model: ElasticNet Regression
 Best Performing Dataset: No FD Dataset
 Best R-squared (R^2) Score: 0.6206
 
-CONCLUSION
+5. CONCLUSION
 The analysis demonstrates that tree-based ensemble models significantly outperform linear models and other algorithms for this prediction task.
 
 Top Performer: The XGBoost model achieved a near-perfect R^2 score, indicating its exceptional ability to capture the complex, non-linear relationships within the data.
